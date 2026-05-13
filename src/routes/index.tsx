@@ -1,26 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { LandingPage } from "@/components/landing/LandingPage";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Lac Glória Laticínios — Queijo de fábrica para seu mercado" },
+      {
+        name: "description",
+        content:
+          "Fábrica de queijos no Sertão de Sergipe. Mussarela, coalho, prato, manteiga e requeijão direto da fábrica para supermercados, mercadinhos e mercearias. Solicite proposta comercial.",
+      },
+      { property: "og:title", content: "Lac Glória Laticínios — Direto da fábrica para seu mercado" },
+      {
+        property: "og:description",
+        content:
+          "Queijos artesanais do Sertão sergipano com preço de fábrica e entrega regional. Receba sua proposta comercial.",
+      },
+      { property: "og:type", content: "website" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return <LandingPage />;
 }
