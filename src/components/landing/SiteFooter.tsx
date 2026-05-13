@@ -7,7 +7,9 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Lac Glória" className="h-12 w-12 rounded-full ring-2 ring-white/30" />
+            <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-white p-1 shadow-[var(--shadow-card)]">
+              <img src={logo} alt="Lac Glória" className="h-full w-full object-contain" />
+            </span>
             <div>
               <p className="text-base font-bold">Lac Glória Laticínios</p>
               <p className="text-xs text-white/70">O sabor do Sertão para a sua mesa</p>

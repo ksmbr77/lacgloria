@@ -26,7 +26,7 @@ const seals = [
 
 export function SocialProof() {
   return (
-    <section id="parceiros" className="bg-muted py-20">
+    <section id="parceiros" className="relative bg-muted py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Quem já vende Lac Glória</p>
