@@ -73,14 +73,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "LacGlória" },
+      { name: "description", content: "Captures B2B leads for Laticínios Lac Glória, a cheese factory in Sergipe, Brazil." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "LacGlória" },
+      { property: "og:description", content: "Captures B2B leads for Laticínios Lac Glória, a cheese factory in Sergipe, Brazil." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "LacGlória" },
+      { name: "twitter:description", content: "Captures B2B leads for Laticínios Lac Glória, a cheese factory in Sergipe, Brazil." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/4bG3BODAmlf6VBdGBFESramJ9tB2/social-images/social-1778772987114-ChatGPT_Image_13_05_2026,_08_30_45.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/4bG3BODAmlf6VBdGBFESramJ9tB2/social-images/social-1778772987114-ChatGPT_Image_13_05_2026,_08_30_45.webp" },
     ],
     links: [
       {
