@@ -22,8 +22,8 @@ export function SiteHeader() {
         </nav>
         <Button asChild variant="cta" size="sm" className="h-9 px-3 text-xs sm:px-4 sm:text-sm">
           <a href="#proposta">
-            <span className="hidden xs:inline sm:inline">Receber proposta</span>
-            <span className="xs:hidden sm:hidden">Proposta</span>
+            <span className="hidden sm:inline">Receber proposta</span>
+            <span className="sm:hidden">Proposta</span>
             <ArrowRight className="h-3.5 w-3.5" />
           </a>
         </Button>
