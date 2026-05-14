@@ -96,18 +96,18 @@ export function LeadForm() {
   }
 
   return (
-    <section id="proposta" className="relative overflow-hidden py-20">
+    <section id="proposta" className="relative overflow-hidden py-12 sm:py-20">
       <div className="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-95" aria-hidden />
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-        <div className="text-primary-foreground">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent">Proposta comercial</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+      <div className="relative mx-auto grid max-w-6xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <div className="min-w-0 text-primary-foreground">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent sm:text-sm">Proposta comercial</p>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-4xl">
             Receba tabela de preços e condições para o seu mercado
           </h2>
-          <p className="mt-4 text-white/90">
+          <p className="mt-3 text-sm text-white/90 sm:mt-4 sm:text-base">
             Preencha o formulário e nosso time comercial envia sua proposta personalizada em poucas horas — pelo WhatsApp ou e-mail, do seu jeito.
           </p>
-          <ul className="mt-6 space-y-3 text-sm text-white/90">
+          <ul className="mt-5 space-y-2.5 text-sm text-white/90 sm:mt-6 sm:space-y-3">
             {[
               "Tabela de preços direto da fábrica",
               "Condições especiais para primeira compra",
@@ -120,7 +120,7 @@ export function LeadForm() {
           </ul>
         </div>
 
-        <div className="rounded-3xl bg-card p-6 shadow-[var(--shadow-elevated)] sm:p-8">
+        <div className="min-w-0 rounded-2xl bg-card p-4 shadow-[var(--shadow-elevated)] sm:rounded-3xl sm:p-8">
           {sent ? (
             <div className="flex flex-col items-center py-10 text-center">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/15 text-secondary">
@@ -136,7 +136,7 @@ export function LeadForm() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
                 <Field label="Nome completo" error={errors.name}>
                   <Input value={data.name} onChange={(e) => update("name", e.target.value)} placeholder="Seu nome" maxLength={100} />
                 </Field>
