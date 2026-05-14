@@ -10,10 +10,10 @@ export function WhatsAppFloating() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3.5 text-sm font-semibold text-whatsapp-foreground shadow-[var(--shadow-elevated)] ring-4 ring-whatsapp/20 transition-all hover:scale-105 hover:brightness-110"
+      className="animate-pulse-ring fixed bottom-4 right-4 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-[var(--shadow-elevated)] transition-all hover:scale-110 hover:brightness-110 sm:bottom-6 sm:right-6 sm:h-auto sm:w-auto sm:gap-2 sm:px-5 sm:py-3.5"
     >
-      <MessageCircle className="h-5 w-5" />
-      <span className="hidden sm:inline">Falar no WhatsApp</span>
+      <MessageCircle className="h-6 w-6 sm:h-5 sm:w-5" />
+      <span className="hidden text-sm font-semibold sm:inline">Falar no WhatsApp</span>
     </a>
   );
 }
