@@ -42,14 +42,15 @@ export function ProductGallery() {
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-elevated)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-[image:var(--gradient-sky)]">
-                <span className="absolute left-3 top-3 z-10 rounded-full bg-white/80 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary-deep backdrop-blur">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent" />
+                <span className="absolute left-3 top-3 z-10 rounded-full bg-white/85 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary-deep shadow-sm backdrop-blur">
                   {p.tag}
                 </span>
                 <img
                   src={p.img}
                   alt={p.name}
                   loading="lazy"
-                  className="h-full w-full object-contain p-5 mix-blend-multiply transition-transform duration-500 group-hover:scale-105 sm:p-7"
+                  className="img-bright h-full w-full object-contain p-4 mix-blend-multiply transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1 sm:p-7"
                 />
               </div>
               <div className="flex-1 border-t border-border p-5">
