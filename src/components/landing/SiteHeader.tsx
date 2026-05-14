@@ -1,18 +1,18 @@
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:h-18 sm:px-6">
-        <a href="#top" className="flex items-center gap-2.5">
-          <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl bg-white p-1 shadow-[var(--shadow-card)] ring-1 ring-border">
+    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/90 backdrop-blur-md">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-3 sm:h-16 sm:px-6">
+        <a href="#top" className="flex items-center gap-2 sm:gap-2.5">
+          <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-white p-1 shadow-[var(--shadow-card)] ring-1 ring-border sm:h-12 sm:w-12 sm:rounded-2xl">
             <img src={logo} alt="Lac Glória Laticínios" className="h-full w-full object-contain" />
           </span>
           <div className="leading-tight">
-            <p className="text-base font-extrabold tracking-tight text-primary-deep">Lac Glória</p>
-            <p className="text-[11px] text-muted-foreground">Laticínios do Sertão</p>
+            <p className="text-sm font-extrabold tracking-tight text-primary-deep sm:text-base">Lac Glória</p>
+            <p className="hidden text-[11px] text-muted-foreground sm:block">Laticínios do Sertão</p>
           </div>
         </a>
         <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
@@ -20,16 +20,13 @@ export function SiteHeader() {
           <a href="#produtos" className="transition-colors hover:text-primary-deep">Produtos</a>
           <a href="#parceiros" className="transition-colors hover:text-primary-deep">Parceiros</a>
         </nav>
-        <Button asChild variant="cta" size="sm" className="hidden sm:inline-flex">
-          <a href="#proposta">Receber proposta</a>
+        <Button asChild variant="cta" size="sm" className="h-9 px-3 text-xs sm:px-4 sm:text-sm">
+          <a href="#proposta">
+            <span className="hidden sm:inline">Receber proposta</span>
+            <span className="sm:hidden">Proposta</span>
+            <ArrowRight className="h-3.5 w-3.5" />
+          </a>
         </Button>
-        <a
-          href="#proposta"
-          aria-label="Receber proposta"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[image:var(--gradient-cta)] text-secondary-foreground shadow-[var(--shadow-soft)] sm:hidden"
-        >
-          <Menu className="h-4 w-4" />
-        </a>
       </div>
     </header>
   );
