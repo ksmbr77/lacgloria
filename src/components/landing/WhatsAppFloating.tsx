@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 
 export function WhatsAppFloating() {
   const href =
-    "https://wa.me/5579999999999?text=" +
+    "https://wa.me/557999308271?text=" +
     encodeURIComponent("Olá, Lac Glória! Tenho interesse em revender seus produtos.");
   return (
     <a
