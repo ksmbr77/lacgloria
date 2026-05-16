@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { CheckCircle2, Send } from "lucide-react";
 
-const WHATSAPP = "5579993082710"; // Número comercial Lac Glória
+const WHATSAPP = "557999308271"; // Número comercial Lac Glória (+55 79 9930-8271)
 
 const schema = z.object({
   name: z.string().trim().min(2, "Informe seu nome").max(100),
