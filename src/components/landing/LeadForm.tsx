@@ -21,6 +21,7 @@ const schema = z.object({
   city: z.string().trim().min(2, "Informe cidade/estado").max(120),
   whatsapp: z.string().trim().min(10, "WhatsApp inválido").max(20),
   email: z.string().trim().email("E-mail inválido").max(160),
+  product: z.enum(["queijo", "manteiga", "requeijao", "queijo_manteiga", "queijo_requeijao", "manteiga_requeijao", "todos"], { message: "Selecione o produto" }),
   volume: z.enum(["pequeno", "medio", "grande"], { message: "Selecione o volume" }),
   source: z.enum(["anuncio", "indicacao", "redes", "outro"], { message: "Selecione uma opção" }),
 });
@@ -31,6 +32,7 @@ type FormState = {
   city: string;
   whatsapp: string;
   email: string;
+  product: "" | "queijo" | "manteiga" | "requeijao" | "queijo_manteiga" | "queijo_requeijao" | "manteiga_requeijao" | "todos";
   volume: "" | "pequeno" | "medio" | "grande";
   source: "" | "anuncio" | "indicacao" | "redes" | "outro";
 };
@@ -41,10 +43,20 @@ const initial: FormState = {
   city: "",
   whatsapp: "",
   email: "",
+  product: "",
   volume: "",
   source: "",
 };
 
+const productLabel: Record<string, string> = {
+  queijo: "Queijo",
+  manteiga: "Manteiga",
+  requeijao: "Requeijão",
+  queijo_manteiga: "Queijo e Manteiga",
+  queijo_requeijao: "Queijo e Requeijão",
+  manteiga_requeijao: "Manteiga e Requeijão",
+  todos: "Todos os produtos",
+};
 const volumeLabel: Record<string, string> = {
   pequeno: "Pequeno (até 100kg/mês)",
   medio: "Médio (100–500kg/mês)",
@@ -87,6 +99,7 @@ export function LeadForm() {
         `• Cidade/UF: ${v.city}\n` +
         `• WhatsApp: ${v.whatsapp}\n` +
         `• E-mail: ${v.email}\n` +
+        `• Produto de interesse: ${productLabel[v.product]}\n` +
         `• Volume estimado: ${volumeLabel[v.volume]}\n` +
         `• Como conheceu: ${sourceLabel[v.source]}`,
     );
@@ -160,6 +173,20 @@ export function LeadForm() {
                   </Field>
                   <Field label="E-mail" error={errors.email} className="sm:col-span-2">
                     <Input type="email" value={data.email} onChange={(e) => update("email", e.target.value)} placeholder="voce@empresa.com" maxLength={160} />
+                  </Field>
+                  <Field label="Produto de interesse" error={errors.product}>
+                    <Select value={data.product} onValueChange={(v) => update("product", v as FormState["product"])}>
+                      <SelectTrigger><SelectValue placeholder="Selecione" /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="queijo">{productLabel.queijo}</SelectItem>
+                        <SelectItem value="manteiga">{productLabel.manteiga}</SelectItem>
+                        <SelectItem value="requeijao">{productLabel.requeijao}</SelectItem>
+                        <SelectItem value="queijo_manteiga">{productLabel.queijo_manteiga}</SelectItem>
+                        <SelectItem value="queijo_requeijao">{productLabel.queijo_requeijao}</SelectItem>
+                        <SelectItem value="manteiga_requeijao">{productLabel.manteiga_requeijao}</SelectItem>
+                        <SelectItem value="todos">{productLabel.todos}</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </Field>
                   <Field label="Volume de compra estimado" error={errors.volume}>
                     <Select value={data.volume} onValueChange={(v) => update("volume", v as FormState["volume"])}>
