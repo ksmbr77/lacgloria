@@ -21,6 +21,7 @@ const schema = z.object({
   city: z.string().trim().min(2, "Informe cidade/estado").max(120),
   whatsapp: z.string().trim().min(10, "WhatsApp inválido").max(20),
   email: z.string().trim().email("E-mail inválido").max(160),
+  product: z.enum(["queijo", "manteiga", "requeijao", "queijo_manteiga", "queijo_requeijao", "manteiga_requeijao", "todos"], { message: "Selecione o produto" }),
   volume: z.enum(["pequeno", "medio", "grande"], { message: "Selecione o volume" }),
   source: z.enum(["anuncio", "indicacao", "redes", "outro"], { message: "Selecione uma opção" }),
 });
@@ -31,6 +32,7 @@ type FormState = {
   city: string;
   whatsapp: string;
   email: string;
+  product: "" | "queijo" | "manteiga" | "requeijao" | "queijo_manteiga" | "queijo_requeijao" | "manteiga_requeijao" | "todos";
   volume: "" | "pequeno" | "medio" | "grande";
   source: "" | "anuncio" | "indicacao" | "redes" | "outro";
 };
@@ -41,10 +43,20 @@ const initial: FormState = {
   city: "",
   whatsapp: "",
   email: "",
+  product: "",
   volume: "",
   source: "",
 };
 
+const productLabel: Record<string, string> = {
+  queijo: "Queijo",
+  manteiga: "Manteiga",
+  requeijao: "Requeijão",
+  queijo_manteiga: "Queijo e Manteiga",
+  queijo_requeijao: "Queijo e Requeijão",
+  manteiga_requeijao: "Manteiga e Requeijão",
+  todos: "Todos os produtos",
+};
 const volumeLabel: Record<string, string> = {
   pequeno: "Pequeno (até 100kg/mês)",
   medio: "Médio (100–500kg/mês)",
