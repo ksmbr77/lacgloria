@@ -30,7 +30,7 @@ export function Hero() {
             </Button>
             <Button asChild variant="outline" size="xl" className="w-full border-white/40 bg-white/10 text-primary-foreground backdrop-blur hover:bg-white/20 hover:text-primary-foreground sm:w-auto">
               <a
-                href="https://wa.me/557999308271?text=Ol%C3%A1%2C%20quero%20comprar%20queijos%20Lac%20Gl%C3%B3ria%20para%20o%20meu%20mercado."
+                href="https://wa.me/557996437711?text=Ol%C3%A1%2C%20quero%20comprar%20queijos%20Lac%20Gl%C3%B3ria%20para%20o%20meu%20mercado."
                 target="_blank"
                 rel="noopener noreferrer"
               >
