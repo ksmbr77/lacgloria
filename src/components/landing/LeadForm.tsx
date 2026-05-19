@@ -99,6 +99,7 @@ export function LeadForm() {
         `• Cidade/UF: ${v.city}\n` +
         `• WhatsApp: ${v.whatsapp}\n` +
         `• E-mail: ${v.email}\n` +
+        `• Produto de interesse: ${productLabel[v.product]}\n` +
         `• Volume estimado: ${volumeLabel[v.volume]}\n` +
         `• Como conheceu: ${sourceLabel[v.source]}`,
     );
@@ -172,6 +173,20 @@ export function LeadForm() {
                   </Field>
                   <Field label="E-mail" error={errors.email} className="sm:col-span-2">
                     <Input type="email" value={data.email} onChange={(e) => update("email", e.target.value)} placeholder="voce@empresa.com" maxLength={160} />
+                  </Field>
+                  <Field label="Produto de interesse" error={errors.product}>
+                    <Select value={data.product} onValueChange={(v) => update("product", v as FormState["product"])}>
+                      <SelectTrigger><SelectValue placeholder="Selecione" /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="queijo">{productLabel.queijo}</SelectItem>
+                        <SelectItem value="manteiga">{productLabel.manteiga}</SelectItem>
+                        <SelectItem value="requeijao">{productLabel.requeijao}</SelectItem>
+                        <SelectItem value="queijo_manteiga">{productLabel.queijo_manteiga}</SelectItem>
+                        <SelectItem value="queijo_requeijao">{productLabel.queijo_requeijao}</SelectItem>
+                        <SelectItem value="manteiga_requeijao">{productLabel.manteiga_requeijao}</SelectItem>
+                        <SelectItem value="todos">{productLabel.todos}</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </Field>
                   <Field label="Volume de compra estimado" error={errors.volume}>
                     <Select value={data.volume} onValueChange={(v) => update("volume", v as FormState["volume"])}>
