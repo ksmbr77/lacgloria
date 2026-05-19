@@ -138,7 +138,7 @@ export function LeadForm() {
             <>
               <div className="mb-5 text-center">
                 <h3 className="text-lg font-bold text-card-foreground sm:text-xl">
-                  Queijos direto da fábrica
+                  Queijos Direto da Fábrica
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Distribuição para supermercados, mercadinhos e revendedores em Todo o Nordeste.
