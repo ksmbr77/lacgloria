@@ -143,9 +143,6 @@ export function LeadForm() {
                 <p className="mt-1 text-sm text-muted-foreground">
                   Distribuição para supermercados, mercadinhos e revendedores em Todo o Nordeste.
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground/80">
-                  Produtos de qualidade, entrega regional e condições comerciais especiais.
-                </p>
               </div>
               <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                 <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
