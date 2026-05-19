@@ -135,52 +135,65 @@ export function LeadForm() {
               </Button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-              <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
-                <Field label="Nome completo" error={errors.name}>
-                  <Input value={data.name} onChange={(e) => update("name", e.target.value)} placeholder="Seu nome" maxLength={100} />
-                </Field>
-                <Field label="Nome do estabelecimento" error={errors.business}>
-                  <Input value={data.business} onChange={(e) => update("business", e.target.value)} placeholder="Mercado / mercearia" maxLength={120} />
-                </Field>
-                <Field label="Cidade / Estado" error={errors.city}>
-                  <Input value={data.city} onChange={(e) => update("city", e.target.value)} placeholder="Aracaju / SE" maxLength={120} />
-                </Field>
-                <Field label="WhatsApp" error={errors.whatsapp}>
-                  <Input value={data.whatsapp} onChange={(e) => update("whatsapp", e.target.value)} placeholder="(00) 00000-0000" inputMode="tel" maxLength={20} />
-                </Field>
-                <Field label="E-mail" error={errors.email} className="sm:col-span-2">
-                  <Input type="email" value={data.email} onChange={(e) => update("email", e.target.value)} placeholder="voce@empresa.com" maxLength={160} />
-                </Field>
-                <Field label="Volume de compra estimado" error={errors.volume}>
-                  <Select value={data.volume} onValueChange={(v) => update("volume", v as FormState["volume"])}>
-                    <SelectTrigger><SelectValue placeholder="Selecione" /></SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="pequeno">{volumeLabel.pequeno}</SelectItem>
-                      <SelectItem value="medio">{volumeLabel.medio}</SelectItem>
-                      <SelectItem value="grande">{volumeLabel.grande}</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </Field>
-                <Field label="Como conheceu a Lac Glória?" error={errors.source}>
-                  <Select value={data.source} onValueChange={(v) => update("source", v as FormState["source"])}>
-                    <SelectTrigger><SelectValue placeholder="Selecione" /></SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="anuncio">Anúncio</SelectItem>
-                      <SelectItem value="indicacao">Indicação</SelectItem>
-                      <SelectItem value="redes">Redes sociais</SelectItem>
-                      <SelectItem value="outro">Outro</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </Field>
+            <>
+              <div className="mb-5 text-center">
+                <h3 className="text-lg font-bold text-card-foreground sm:text-xl">
+                  Queijos direto da fábrica
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Distribuição para supermercados, mercadinhos e revendedores em Todo o Nordeste.
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground/80">
+                  Produtos de qualidade, entrega regional e condições comerciais especiais.
+                </p>
               </div>
-              <Button type="submit" variant="cta" size="xl" className="w-full">
-                <Send className="h-4 w-4" /> Quero receber proposta comercial
-              </Button>
-              <p className="text-center text-xs text-muted-foreground">
-                Ao enviar, você concorda em ser contatado pelo nosso time comercial.
-              </p>
-            </form>
+              <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
+                  <Field label="Nome completo" error={errors.name}>
+                    <Input value={data.name} onChange={(e) => update("name", e.target.value)} placeholder="Seu nome" maxLength={100} />
+                  </Field>
+                  <Field label="Nome do estabelecimento" error={errors.business}>
+                    <Input value={data.business} onChange={(e) => update("business", e.target.value)} placeholder="Mercado / mercearia" maxLength={120} />
+                  </Field>
+                  <Field label="Cidade / Estado" error={errors.city}>
+                    <Input value={data.city} onChange={(e) => update("city", e.target.value)} placeholder="Aracaju / SE" maxLength={120} />
+                  </Field>
+                  <Field label="WhatsApp" error={errors.whatsapp}>
+                    <Input value={data.whatsapp} onChange={(e) => update("whatsapp", e.target.value)} placeholder="(00) 00000-0000" inputMode="tel" maxLength={20} />
+                  </Field>
+                  <Field label="E-mail" error={errors.email} className="sm:col-span-2">
+                    <Input type="email" value={data.email} onChange={(e) => update("email", e.target.value)} placeholder="voce@empresa.com" maxLength={160} />
+                  </Field>
+                  <Field label="Volume de compra estimado" error={errors.volume}>
+                    <Select value={data.volume} onValueChange={(v) => update("volume", v as FormState["volume"])}>
+                      <SelectTrigger><SelectValue placeholder="Selecione" /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="pequeno">{volumeLabel.pequeno}</SelectItem>
+                        <SelectItem value="medio">{volumeLabel.medio}</SelectItem>
+                        <SelectItem value="grande">{volumeLabel.grande}</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </Field>
+                  <Field label="Como conheceu a Lac Glória?" error={errors.source}>
+                    <Select value={data.source} onValueChange={(v) => update("source", v as FormState["source"])}>
+                      <SelectTrigger><SelectValue placeholder="Selecione" /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="anuncio">Anúncio</SelectItem>
+                        <SelectItem value="indicacao">Indicação</SelectItem>
+                        <SelectItem value="redes">Redes sociais</SelectItem>
+                        <SelectItem value="outro">Outro</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </Field>
+                </div>
+                <Button type="submit" variant="cta" size="xl" className="w-full">
+                  <Send className="h-4 w-4" /> Quero receber proposta comercial
+                </Button>
+                <p className="text-center text-xs text-muted-foreground">
+                  Ao enviar, você concorda em ser contatado pelo nosso time comercial.
+                </p>
+              </form>
+            </>
           )}
         </div>
       </div>
