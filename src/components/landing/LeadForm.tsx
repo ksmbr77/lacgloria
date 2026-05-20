@@ -58,9 +58,9 @@ const productLabel: Record<string, string> = {
   todos: "Todos os produtos",
 };
 const volumeLabel: Record<string, string> = {
-  pequeno: "Pequeno (até 100kg/mês)",
-  medio: "Médio (100–500kg/mês)",
-  grande: "Grande (acima de 500kg/mês)",
+  pequeno: "Pequeno (500kg – 1.000kg/mês)",
+  medio: "Médio (1.000kg – 2.000kg/mês)",
+  grande: "Grande (acima de 2.000kg/mês)",
 };
 const sourceLabel: Record<string, string> = {
   anuncio: "Anúncio",
