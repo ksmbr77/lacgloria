@@ -16,9 +16,9 @@ export function SiteHeader() {
           </div>
         </a>
         <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
-          <a href="#diferenciais" className="transition-colors hover:text-primary-deep">Diferenciais</a>
-          <a href="#produtos" className="transition-colors hover:text-primary-deep">Produtos</a>
-          <a href="#parceiros" className="transition-colors hover:text-primary-deep">Parceiros</a>
+          <a href="/completa#diferenciais" className="transition-colors hover:text-primary-deep">Diferenciais</a>
+          <a href="/completa#produtos" className="transition-colors hover:text-primary-deep">Produtos</a>
+          <a href="/completa#parceiros" className="transition-colors hover:text-primary-deep">Parceiros</a>
         </nav>
         <Button asChild variant="cta" size="sm" className="h-9 px-3 text-xs sm:px-4 sm:text-sm">
           <a href="#proposta">
