@@ -53,6 +53,9 @@ export function Hero() {
               className="img-bright h-56 w-full object-cover sm:h-80 lg:h-[520px]"
               width={1600}
               height={1200}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary-deep/30 via-transparent to-white/10" />
           </div>
